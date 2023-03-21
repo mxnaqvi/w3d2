@@ -4,7 +4,7 @@ class Card
     
     def initialize(value)
         @face_up = false  
-        @value = value 
+        @value = ('a'..'z').to_a.sample 
     end 
 
     def hide
@@ -16,8 +16,11 @@ class Card
     end 
 
     def to_s
-        hidden_value = @value 
-        hidden_value = ''
+        if @face_up == false
+            return ''
+        elsif @face_up == true
+            return @value
+        end
     end 
 
     def ==
