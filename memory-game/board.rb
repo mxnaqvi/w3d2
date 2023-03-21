@@ -20,7 +20,9 @@ class Board
         random_values = values.shuffle 
             @grid.each_with_index do |el1, i|
                 el1.each_with_index do |el2, j|
-                     @grid[i][j] = random_values.pop  
+                    random_value = random_values.pop
+                    Card.new(random_value)
+                     @grid[i][j] = random_value 
                 end
             end
     end
