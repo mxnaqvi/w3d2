@@ -23,11 +23,13 @@ class Board
                      @grid[i][j] = random_values.pop  
                 end
             end
-       print @grid 
     end
 
-    # def render
-    # end
+    def render
+        @grid.each do |row|
+            puts row.join
+        end
+    end
 
     # def won?
     # end
